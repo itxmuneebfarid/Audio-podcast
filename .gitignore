@@ -1,0 +1,8 @@
+.env
+.venv
+__pycache__/
+uv.lock
+podcast.txt
+temp/
+final_podcast.mp3
+data/

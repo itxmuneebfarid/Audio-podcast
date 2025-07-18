@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎙️ PDF to Podcast Generator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <div class="bg-white p-8 rounded-xl shadow-md w-full max-w-md">
+    <h1 class="text-2xl font-bold mb-6 text-center">🎙️ PDF to Podcast</h1>
+
+    <form id="uploadForm" class="flex flex-col space-y-4">
+      <input type="file" id="pdfInput" accept=".pdf" required class="border p-2 rounded" />
+      <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700">
+        Upload and Generate Podcast
+      </button>
+    </form>
+
+    <div id="status" class="mt-4 text-center text-gray-700"></div>
+
+    <a id="downloadLink" href="#" download="podcast.mp3"
+       class="hidden mt-6 block bg-green-600 text-white text-center py-2 px-4 rounded hover:bg-green-700">
+      🎧 Download Podcast
+    </a>
+  </div>
+
+  <script>
+    const uploadForm = document.getElementById('uploadForm');
+    const pdfInput = document.getElementById('pdfInput');
+    const statusDiv = document.getElementById('status');
+    const downloadLink = document.getElementById('downloadLink');
+
+    const BACKEND = "http://127.0.0.1:8000"; // Replace with your server in production
+
+    uploadForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const file = pdfInput.files[0];
+      if (!file) {
+        alert("Please select a PDF file.");
+        return;
+      }
+
+      statusDiv.textContent = "⏳ Uploading and generating podcast...";
+      downloadLink.classList.add('hidden');
+
+      const formData = new FormData();
+      formData.append("file", file);
+
+      try {
+        const response = await fetch(`${BACKEND}/generate-podcast/`, {
+          method: "POST",
+          body: formData
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.status === "processing") {
+          statusDiv.textContent = "🔄 Podcast is being generated...";
+
+          // Poll for download availability
+          const checkInterval = setInterval(async () => {
+            const downloadResponse = await fetch(`${BACKEND}/download`);
+            if (downloadResponse.ok) {
+              clearInterval(checkInterval);
+              const blob = await downloadResponse.blob();
+              const url = URL.createObjectURL(blob);
+              downloadLink.href = url;
+              downloadLink.classList.remove('hidden');
+              statusDiv.textContent = "✅ Podcast is ready!";
+            }
+          }, 3000);
+        } else {
+          statusDiv.textContent = `❌ Error: ${data.error || "Unknown error"}`;
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        statusDiv.textContent = "❌ Failed to generate podcast.";
+      }
+    });
+  </script>
+</body>
+</html>
