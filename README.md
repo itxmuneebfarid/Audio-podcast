@@ -14,6 +14,16 @@ Generate a podcast-style dialogue from the content.
 Convert the dialogue into an .mp3 file using realistic AI voices.
 
 Download the final podcast directly through a web interface.
+Requirements
+Install dependencies via pip:
+bash
+Copy
+Edit
+pip install fastapi uvicorn python-dotenv pydub edge-tts
+Also download and configure FFmpeg:
+python
+Copy
+Edit
 
 # In your Python code, set paths like this:
 
@@ -75,36 +85,29 @@ Edit
 
 📂 project-root
 
-├── main.py  
-# FastAPI backend
-├── src/          
-# Text processing and podcast logic
+├── main.py  # FastAPI backend
+├── src/          # Text processing and podcast logic
 ├── util.py
 
 ├── .env
 
 ├── frontend/
 
-│   └── index.html  
-# Tailwind-based UI
+│   └── index.html  # Tailwind-based UI
 └── requirements.txt
-Requirements
-Install dependencies via pip:
-bash
-Copy
-Edit
-pip install fastapi uvicorn python-dotenv pydub edge-tts
-Also download and configure FFmpeg:
-python
-Copy
-Edit
 
 How It Works
 scss
 Copy
 Edit
-PDF → Text Extraction → Cleaning → Dialogue Generation → TTS (Edge TTS) → MP3 Podcast
-Text Extraction: Using LangChain loader
+PDF →
+Text Extraction →
+Cleaning → 
+Dialogue Generation 
+→ TTS (Edge TTS)
+→ MP3 Podcast
+Text Extraction:
+Using LangChain loader
 
 Text Cleaning: Removes unwanted headers/footers
 
@@ -114,7 +117,7 @@ Text-to-Speech: Edge TTS with voice customization
 
 Audio Output: Combined into final_podcast.mp3
 
- Future Enhancements
+Future Enhancements
 Multiple speaker voices and styles
 
 Language translation support
