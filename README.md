@@ -1,7 +1,7 @@
-🎙️ PDF to Podcast Generator
+PDF to Podcast Generator:
 Convert your PDF documents into engaging, natural-sounding podcast episodes using FastAPI (backend) and Tailwind CSS (frontend). This tool transforms static reading material into audio content, ideal for learners, researchers, or anyone who prefers to listen rather than read.
 
-📌 Project Overview
+Project Overview
 This project allows users to:
 
 Upload any .pdf file.
@@ -14,24 +14,22 @@ Convert the dialogue into an .mp3 file using realistic AI voices.
 
 Download the final podcast directly through a web interface.
 
-⚙️ Requirements
+Requirements
 Install dependencies via pip:
-
 bash
 Copy
 Edit
 pip install fastapi uvicorn python-dotenv pydub edge-tts
 Also download and configure FFmpeg:
-
 python
 Copy
 Edit
 # In your Python code, set paths like this:
 AudioSegment.converter = r"D:\\ffmpeg\\bin\\ffmpeg.exe"
 pydub.utils.get_prober_name = lambda: r"D:\\ffmpeg\\bin\\ffprobe.exe"
-✅ FFmpeg is required by pydub for audio processing and must be downloaded separately.
+FFmpeg is required by pydub for audio processing and must be downloaded separately.
 
-🧪 Setting Up Virtual Environment (Recommended)
+Setting Up Virtual Environment (Recommended)
 bash
 Copy
 Edit
@@ -53,7 +51,7 @@ uvicorn
 python-dotenv
 pydub
 edge-tts
-🚀 How to Run the App
+How to Run the App
 1. Start FastAPI Backend
 bash
 Copy
@@ -64,7 +62,7 @@ This runs the server at http://127.0.0.1:8000.
 2. Open Frontend Website
 Use the HTML file provided (index.html). You can open it directly in a browser, or serve it using Python or any web server.
 
-🌐 Frontend Overview
+Frontend Overview
 A clean, minimal UI built with Tailwind CSS, providing:
 
 PDF upload functionality
@@ -73,7 +71,7 @@ Status updates
 
 Podcast download button (once generated)
 
-🖼 Preview
+Preview
 <!-- Replace with real screenshot if available -->
 
 📁 Frontend File Structure
@@ -88,7 +86,7 @@ Edit
 ├── frontend/
 │   └── index.html        # Tailwind-based UI
 └── requirements.txt
-🧠 How It Works
+How It Works
 scss
 Copy
 Edit
@@ -103,20 +101,20 @@ Text-to-Speech: Edge TTS with voice customization
 
 Audio Output: Combined into final_podcast.mp3
 
-💡 Future Enhancements
-🗣️ Multiple speaker voices and styles
+ Future Enhancements
+Multiple speaker voices and styles
 
-🌍 Language translation support
+Language translation support
 
-☁️ Deployment to cloud (Render, HuggingFace, etc.)
+Deployment to cloud (Render, HuggingFace, etc.)
 
-📱 Mobile-friendly UI
+ Mobile-friendly UI
 
-🎙️ Podcast series feature for long PDFs
+Podcast series feature for long PDFs
 
-📊 Analytics dashboard (time saved, word count, etc.)
+Analytics dashboard (time saved, word count, etc.)
 
-🙌 Credits
+Credits:
 Built using FastAPI
 
 Voices generated with Edge TTS
