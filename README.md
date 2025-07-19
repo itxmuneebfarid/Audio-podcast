@@ -13,15 +13,18 @@ Download the final .mp3 output
 
 🧰 Requirements
 Python 3.8+
-
+fastapi
+uvicorn
+python-dotenv
+pydub
+edge-tts
+langchain
+langchain-community
 FFmpeg (required by pydub for audio processing)
 Download from: https://ffmpeg.org/download.html
 
 Set FFmpeg paths in your Python code:
-
 python
-Copy
-Edit
 from pydub import AudioSegment, utils
 AudioSegment.converter = r"D:\\ffmpeg\\bin\\ffmpeg.exe"
 utils.get_prober_name = lambda: r"D:\\ffmpeg\\bin\\ffprobe.exe"
@@ -40,11 +43,7 @@ bash
 Copy
 Edit
 pip install -r requirements.txt
-Example requirements.txt:
-
-nginx
-Copy
-Edit
+# Example requirements.txt:
 fastapi
 uvicorn
 python-dotenv
@@ -55,8 +54,6 @@ langchain-community
 ▶️ Running the App
 1. Start the FastAPI server
 bash
-Copy
-Edit
 uvicorn main:app --reload
 Server runs at: http://127.0.0.1:8000
 
@@ -64,20 +61,8 @@ Server runs at: http://127.0.0.1:8000
 Open frontend/index.html in your browser (no server needed).
 
 🧠 How It Works
-scss
-Copy
-Edit
 PDF → Text Extraction → Cleaning → Dialogue Creation → TTS → Podcast (MP3)
 LangChain: PDF parsing
-
-Text Cleaner: Removes noise
-
-Dialogue Generator: Converts text into conversational flow
-
-Edge TTS: Generates speech with selected voice
-
-Pydub: Combines and saves final final_podcast.mp3
-
 📁 Project Structure
 bash
 Copy
@@ -92,16 +77,6 @@ Edit
 └── requirements.txt
 🌟 Future Improvements
 Multi-voice conversations
-
-Language translation
-
-Cloud deployment (Render, HuggingFace, etc.)
-
-Mobile-friendly UI
-
-Series support for long PDFs
-
-Analytics dashboard
 
 🙌 Credits
 Backend: FastAPI
