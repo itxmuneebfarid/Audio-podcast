@@ -16,9 +16,6 @@ Convert the dialogue into an .mp3 file using realistic AI voices.
 Download the final podcast directly through a web interface.
 Requirements
 Install dependencies via pip:
-bash
-Copy
-Edit
 pip install fastapi uvicorn python-dotenv pydub edge-tts
 Also download and configure FFmpeg:
 python
@@ -26,13 +23,9 @@ Copy
 Edit
 
 # In your Python code, set paths like this:
-
 AudioSegment.converter = r"D:\\ffmpeg\\bin\\ffmpeg.exe"
-
 pydub.utils.get_prober_name = lambda: r"D:\\ffmpeg\\bin\\ffprobe.exe"
-
 FFmpeg is required by pydub for audio processing and must be downloaded separately.
-
 Setting Up Virtual Environment (Recommended)
 bash
 Copy
@@ -100,13 +93,7 @@ How It Works
 scss
 Copy
 Edit
-PDF →
-Text Extraction →
-Cleaning → 
-Dialogue Generation 
-→ TTS (Edge TTS)
-→ MP3 Podcast
-Text Extraction:
+PDF →Text Extraction → Cleaning → Dialogue Generation → TTS (Edge TTS)→ MP3 Podcast Text Extraction:
 Using LangChain loader
 
 Text Cleaning: Removes unwanted headers/footers
