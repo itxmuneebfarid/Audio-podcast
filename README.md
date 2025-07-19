@@ -1,4 +1,5 @@
 PDF to Podcast Generator:
+
 Convert your PDF documents into engaging, natural-sounding podcast episodes using FastAPI (backend) and Tailwind CSS (frontend). This tool transforms static reading material into audio content, ideal for learners, researchers, or anyone who prefers to listen rather than read.
 
 Project Overview
