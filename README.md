@@ -26,8 +26,11 @@ python
 Copy
 Edit
 # In your Python code, set paths like this:
+
 AudioSegment.converter = r"D:\\ffmpeg\\bin\\ffmpeg.exe"
+
 pydub.utils.get_prober_name = lambda: r"D:\\ffmpeg\\bin\\ffprobe.exe"
+
 FFmpeg is required by pydub for audio processing and must be downloaded separately.
 
 Setting Up Virtual Environment (Recommended)
@@ -79,14 +82,23 @@ Preview
 plaintext
 Copy
 Edit
+
 📂 project-root
-├── main.py               # FastAPI backend
-├── src/                  # Text processing and podcast logic
+
+├── main.py  
+# FastAPI backend
+├── src/          
+# Text processing and podcast logic
 ├── util.py
+
 ├── .env
+
 ├── frontend/
-│   └── index.html        # Tailwind-based UI
+
+│   └── index.html  
+# Tailwind-based UI
 └── requirements.txt
+
 How It Works
 scss
 Copy
