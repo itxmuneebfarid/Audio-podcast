@@ -16,9 +16,9 @@ venv\Scripts\activate  # Windows
 # or
 source venv/bin/activate  # macOS/Linux
 
-# Then install:
+# Then install the Requirements:
 pip install -r requirements.txt
-Example requirements.txt:
+# Example requirements.txt:
 langchain 
 langchain-community
 fastapi
