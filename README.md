@@ -12,15 +12,15 @@ Generate realistic podcast-style audio using Edge TTS
 Download the final .mp3 output
 
 # Requirements
-Python 3.8+
-fastapi
-uvicorn
-python-dotenv
-pydub
-edge-tts
-langchain
-langchain-community
-FFmpeg (required by pydub for audio processing)
+Python 3.8+,
+fastapi,
+uvicorn,
+python-dotenv,
+pydub,
+edge-tts,
+langchain,
+langchain-community,
+FFmpeg (required by pydub for audio processing),
 Download from: https://ffmpeg.org/download.html
 
 Set FFmpeg paths in your Python code:
