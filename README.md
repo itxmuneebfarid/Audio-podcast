@@ -1,8 +1,8 @@
 
-🎙️ PDF to Podcast Generator
+# PDF to Podcast Generator
 Convert PDF documents into natural-sounding podcast episodes using FastAPI (backend) and Tailwind CSS (frontend). Ideal for learners, researchers, or anyone who prefers listening over reading.
 
-🚀 Features
+# Features
 Upload any .pdf file
 
 Extract and clean text
@@ -11,7 +11,7 @@ Generate realistic podcast-style audio using Edge TTS
 
 Download the final .mp3 output
 
-🧰 Requirements
+# Requirements
 Python 3.8+
 fastapi
 uvicorn
@@ -28,7 +28,7 @@ python
 from pydub import AudioSegment, utils
 AudioSegment.converter = r"D:\\ffmpeg\\bin\\ffmpeg.exe"
 utils.get_prober_name = lambda: r"D:\\ffmpeg\\bin\\ffprobe.exe"
-⚙️ Setup Instructions
+# Setup Instructions
 1. Create and activate virtual environment
 bash
 Copy
@@ -51,23 +51,24 @@ pydub
 edge-tts
 langchain
 langchain-community
-▶️ Running the App
+# Running the App
 1. Start the FastAPI server
 bash
 uvicorn main:app --reload
 Server runs at: http://127.0.0.1:8000
 
-2. Launch the frontend
+
+ Launch the frontend
 Open frontend/index.html in your browser (no server needed).
 
-🧠 How It Works
+#How It Works
 PDF → Text Extraction → Cleaning → Dialogue Creation → TTS → Podcast (MP3)
 LangChain: PDF parsing
-📁 Project Structure
+# Project Structure
 bash
 Copy
 Edit
-📂 project-root/
+# project-root/
 ├── main.py             # FastAPI backend
 ├── src/                # Processing and generation logic
 ├── util.py
@@ -75,10 +76,10 @@ Edit
 ├── frontend/
 │   └── index.html      # Tailwind-based UI
 └── requirements.txt
-🌟 Future Improvements
+# Future Improvements
 Multi-voice conversations
 
-🙌 Credits
+# Credits
 Backend: FastAPI
 
 Voices: Microsoft Edge TTS
