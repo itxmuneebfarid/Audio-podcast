@@ -15,16 +15,6 @@ Convert the dialogue into an .mp3 file using realistic AI voices.
 
 Download the final podcast directly through a web interface.
 
-Requirements
-Install dependencies via pip:
-bash
-Copy
-Edit
-pip install fastapi uvicorn python-dotenv pydub edge-tts
-Also download and configure FFmpeg:
-python
-Copy
-Edit
 # In your Python code, set paths like this:
 
 AudioSegment.converter = r"D:\\ffmpeg\\bin\\ffmpeg.exe"
@@ -98,6 +88,16 @@ Edit
 │   └── index.html  
 # Tailwind-based UI
 └── requirements.txt
+Requirements
+Install dependencies via pip:
+bash
+Copy
+Edit
+pip install fastapi uvicorn python-dotenv pydub edge-tts
+Also download and configure FFmpeg:
+python
+Copy
+Edit
 
 How It Works
 scss
